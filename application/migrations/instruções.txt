@@ -1,0 +1,9 @@
+Migrations:
+Partindo de um banco inicial, documenta-se as suas alterações na forma de código PHP. 
+E à estas mudanças nós temos que dar números de versão. 
+Depois basta acompanhar as Migrations e seu banco não mais ficará desatualizado! Perfeito!
+
+Create para criar tabela
+Add para adicionar campos
+
+Pesquisar melhor sobre Migrations.

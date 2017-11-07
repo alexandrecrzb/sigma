@@ -1,0 +1,63 @@
+.log-in-form{
+  margin-top: 35%;
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+.fi{
+    margin-right: 0.7rem;
+    font-size: 1.2em;
+}
+
+.user-ul{
+     list-style-type: none;
+}
+.top-bar{
+  margin-bottom: 1%;
+}
+.user-button{
+  float: right;
+  margin-top: 5%;
+  margin-right: 1.5%;
+  text-align: right;
+}
+
+
+.callout p{
+  margin-bottom: 0rem;
+}
+
+.menu-texto{
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+
+/* tabelas */
+table.data-table{
+  margin-bottom: -2px;
+}
+a.table-actions{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 3px;
+}
+.table-edit{
+  background: url(../images/actions-edit.png);
+}
+.table-pass{
+  background: url(../images/actions-pass.png);
+}
+.table-delete{
+  background: url(../images/actions-delete.png);
+}
+th.sorting_asc{
+  background: url(../images/order-asc.png) right center no-repeat;
+}
+th.sorting_desc{
+  background: url(../images/order-desc.png) right center no-repeat;
+}
