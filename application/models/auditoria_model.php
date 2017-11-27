@@ -18,7 +18,7 @@ class Auditoria_model extends CI_Model {
         }
     }
 
-    public function pegar_porId($id=NULL){
+    public function pegar_porId($id = NULL){
         if ($id != NULL) {
             $this->db->where('id', $id);
             $this->db->limit(1);
@@ -28,7 +28,10 @@ class Auditoria_model extends CI_Model {
         }        
     }
     
-    public function pega_tudo(){
+    public function pega_tudo($limit = 0){
+        if ($limit > 0) {
+            $this->db->limit($limit);
+        }
         return $this->db->get('auditoria');
     }
 

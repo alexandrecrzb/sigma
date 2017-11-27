@@ -38,10 +38,9 @@ class Usuarios_model extends CI_Model {
 
     public function deletar($condicao = NULL, $redir = TRUE){
         if ($condicao != NULL && is_array($condicao)) {
-            
+            auditoria('Exclusão de usuario', 'Usuario excluido');
             $this->db->delete('usuarios', $condicao);
             if ($this->db->affected_rows() > 0) {
-                auditoria('Exclusão de usuario', 'Usuario excluido');
                 set_msg('msg_ok', 'Exclusão efetuada com sucesso', 'sucesso');
             } else {
                set_msg('msg_erro', 'Erro ao excluir registro', 'erro');

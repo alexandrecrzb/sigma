@@ -15,10 +15,9 @@ class Migration_Create_auditoria extends CI_Migration{
                 'type' => 'VARCHAR',
                 'constraint' => 45
             ),
-            'data_hora DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP',
-            /* 'data_hora' => array(
+            'data_hora' => array(
                 'type' => 'TIMESTAMP'
-            ), */
+            ),
             'operacao' => array(
                 'type' =>  'VARCHAR',
                 'constraint' => 45
@@ -30,8 +29,6 @@ class Migration_Create_auditoria extends CI_Migration{
                 'type' => 'TEXT'
             )
         ));
-
-        //$this->dbforge->add_field("`data_hora` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP");
 
         //Adicionando id como Primary Key
         $this->dbforge->add_key('id', TRUE);

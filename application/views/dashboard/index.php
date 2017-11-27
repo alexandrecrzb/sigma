@@ -36,11 +36,12 @@
                     <ul class="dropdown menu" data-dropdown-menu>
                     <li class="menu-texto"><?php echo anchor ('dashboard', 'Home'); ?></li>
                     <li>
-                        <!-- <?php echo anchor ('usuarios/gerenciar', 'Usuários'); ?> -->
-                        <?php echo anchor ('usuarios', 'Usuários'); ?>
+                        <?php echo anchor ('usuarios/gerenciar', 'Usuários'); ?>
+                        <!-- <?php echo anchor ('usuarios', 'Usuários'); ?> -->
                         <ul class="menu vertical">
                             <li><?php echo anchor ('usuarios/cadastrar', 'Cadastrar'); ?></li>
                             <li><?php echo anchor ('usuarios/gerenciar', 'Gerenciar'); ?></li>
+                            <li><?php echo anchor ('auditoria/gerenciar', 'Auditoria'); ?></li>
                         </ul>
                     </li>
                     </ul>

@@ -5,5 +5,3 @@ Depois basta acompanhar as Migrations e seu banco não mais ficará desatualizad
 
 Create para criar tabela
 Add para adicionar campos
-
-Pesquisar melhor sobre Migrations.

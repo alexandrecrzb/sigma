@@ -209,20 +209,20 @@ function auditoria($operacao, $obs, $query = TRUE){
     $CI = & get_instance();
     $CI->load->library('session');
     $CI->load->model('auditoria_model', 'auditoria');
-
-      if ($query) {
+    
+    if ($query) {
         $last_query = $CI->db->last_query();
     } else {
         $last_query = '';
         }
-    
-        if (esta_logado(FALSE)) {
+
+    if (esta_logado(FALSE)) {
         $user_id = $CI->session->userdata('user_id');
         $user_login = $CI->usuarios->pegar_porId($user_id)->row()->login;
     } else {
         $user_login = 'Desconhecido';       
         }
-        
+
         $dados = array(
             'usuario' => $user_login,
             'operacao' => $operacao,

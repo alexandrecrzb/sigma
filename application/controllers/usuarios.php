@@ -61,7 +61,7 @@ class Usuarios extends CI_Controller {
     }
 
     public function logout(){
-        auditoria('Logout do sistema', 'Logout efetuado com sucesso');
+        //auditoria('Logout do sistema', 'Logout efetuado com sucesso');
         $this->session->unset_userdata(array(
             'user_id' => '',
             'user_nome' => '',
@@ -141,7 +141,7 @@ class Usuarios extends CI_Controller {
     public function gerenciar(){
         esta_logado();   
 
-        //set_tema('arquivo_js', load_js(array('data-table', 'table')), FALSE);
+        set_tema('arquivo_js', load_js(array('data-table', 'table')), FALSE);
         set_tema('titulo', 'Listagem de usuarios');        
         set_tema('conteudo', load_modulo('usuarios', 'gerenciar'));     
         load_template();
