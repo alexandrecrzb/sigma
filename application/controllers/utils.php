@@ -4,7 +4,7 @@ class Utils extends CI_Controller{
     public function migrate()
     {
         $this->load->library('migration');
-        $sucesso = $this->migration->current();
+        $sucesso = $this->migration->version(3);
         if($sucesso){
             echo 'Migrado com sucesso';
         } else{

@@ -5,14 +5,17 @@ switch ($tela) {
         echo '<div class="small-12 columns">';
         echo breadcrumbs();
         echo form_open_multipart('midia/cadastrar');
-        echo form_fieldset('Upload de Midia', array('class'=>'fieldset'));
+       
         
         //Erros de validação
         erros_validacao();
 
         //Mostra mensagem do flashdata
         get_msg('msg_ok');
+        get_msg('msg_erro');
 
+        //Fieldset para organizar os forms no container
+        echo form_fieldset('Upload de Midia', array('class'=>'fieldset'));
         //Campos do formulario
         echo form_label('Nome do arquivo', 'nome');
         echo form_input(array('name' => 'nome', 'id' => 'nome', 'class' => 'small-3', 'maxlenght' => '100'), set_value('nome'), 'autofocus');

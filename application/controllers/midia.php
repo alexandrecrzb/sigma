@@ -5,7 +5,7 @@ class Midia extends CI_Controller{
         parent::__construct();
         init_dashboard();
         esta_logado();
-        //$this->load->model('midia_model', 'midia');   
+        $this->load->model('midia_model', 'midia');   
     }
 
 	public function index(){
@@ -13,6 +13,19 @@ class Midia extends CI_Controller{
     }
 
     public function cadastrar(){
+        $this->form_validation->set_rules('nome', '<strong>Usuário</strong>', 'trim|required|ucfirst');
+        $this->form_validation->set_rules('descricao', '<strong>E-Descrição</strong>', 'trim');
+        if($this->form_validation->run()==TRUE){
+            $upload = $this->midia->do_upload('arquivo');
+            if (is_array($upload) && $upload['file_name'] != '') {
+            $dados = elements(array('nome', 'descricao'), $this->input->post());
+            $dados['arquivo'] = $upload['file_name'];
+            $this->midia->inserir_dados($dados);
+            } else {
+                set_msg('msg_erro', $upload, 'erro');
+                redirect(current_url());
+            }            
+        }
     set_tema('titulo', 'Upload de arquivos');        
     set_tema('conteudo', load_modulo('midia', 'cadastrar'));     
     load_template();
