@@ -4,7 +4,7 @@ switch ($tela) {
     case 'cadastrar':
         echo '<div class="small-12 columns">';
         echo breadcrumbs();
-        echo form_open_multipart('midia/cadastrar');
+        echo form_open_multipart('midia/cadastrar', array('class'=>'custom'));
        
         
         //Erros de validação
@@ -27,7 +27,7 @@ switch ($tela) {
         echo form_upload(array('name' =>'arquivo' ,'class' => 'small-12'),set_value('arquivo'));
 
         //Botões
-        echo form_submit(array('name' => 'Cadastrar','class'=> 'button'), 'Salvar'),'&nbsp';
+        echo form_submit(array('name' => 'Enviar','class'=> 'button'), 'Salvar'),'&nbsp';
         echo anchor ('midia/gerenciar', 'Cancelar', array('class' => 'button alert espaco-btn'));
 
         echo form_fieldset_close();
@@ -54,21 +54,25 @@ switch ($tela) {
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Usuário</th>
-                        <th>Data e hora</th>
-                        <th>Operação</th>
-                        <th>Observação</th>
+                        <th>Nome</th>
+                        <th>Link</th>
+                        <th>Thumbnail</th>
+                        <th class="text-center">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                        $query = $this->auditoria->pega_tudo($limite)->result();
+                        $query = $this->midia->pega_tudo()->result();
                         foreach ($query as $linha) {
                             echo '<tr>';
-                            printf('<td>%s</td>', $linha->usuario);
-                            printf('<td>%s</td>', date('d/m/Y H:i:s', strtotime($linha->data_hora)));
-                            printf('<td>%s</td>', '<span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="2" title="'.$linha->query.'">'.$linha->operacao .'</span>');
-                            printf('<td>%s</td>', $linha->observacao);
+                            printf('<td>%s</td>', $linha->nome);
+                            printf('<td>%s</td>', base_url("uploads/imagens/$linha->arquivo"));
+                            printf('<td>%s</td>', 'Thumb');
+                            printf('<td class="text-center">%s%s%s</td>', 
+                                anchor("uploads/$linha->arquivo", ' ', array('class' => 'table-actions table-view', 'title' => 'Visualizar', 'target' => '_blank')), 
+                                anchor("midia/editar/$linha->id", ' ', array('class' => 'table-actions table-edit', 'title' => 'Editar')),
+                                anchor("midia/excluir/$linha->id", ' ', array('class' => 'table-actions table-delete del-reg', 'title' => 'Excluir'))
+                        );
                             echo '</tr>';
                         }
                     ?>

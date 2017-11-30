@@ -24,9 +24,11 @@ class Midia_model extends CI_Model {
             return $this->upload->data();
         } else {
             return $this->upload->display_errors();
-        }
-        
+        }   
+    }
 
+        public function pega_tudo(){
+        return $this->db->get('midia');
     }
 }
 

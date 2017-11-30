@@ -33,7 +33,7 @@ class Midia extends CI_Controller{
 
     public function gerenciar(){
         set_tema('arquivo_js', load_js(array('data-table', 'table')), FALSE);
-        set_tema('titulo', 'Registros de auditoria');        
+        set_tema('titulo', 'Imagens');        
         set_tema('conteudo', load_modulo('midia', 'gerenciar'));     
         load_template();
     }

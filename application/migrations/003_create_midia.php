@@ -19,7 +19,7 @@ class Migration_Create_midia extends CI_Migration{
                 'type' =>  'VARCHAR',
                 'constraint' => 255
             ),
-            'Arquivo' => array(
+            'arquivo' => array(
                 'type' =>  'VARCHAR',
                 'constraint' => 255
             )
