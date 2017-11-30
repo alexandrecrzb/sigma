@@ -46,17 +46,10 @@ switch ($tela) {
 
          <div class="small-12 columns">
             <?php 
-                echo breadcrumbs();
+                echo 
+                breadcrumbs();
                 get_msg('msg_ok');
                 get_msg('msg_erro');
-                 //Se for 0 ele pega tudo na função do model pega_tudo();
-                $modo = $this->uri->segment(3);
-                if ($modo == 'all') {
-                    $limite = 0;
-                } else {
-                    $limite = 15;
-                    echo '<p>Mostrando os últimos 15 registros, para ver todo histórico '.anchor('auditoria/gerenciar/all','clique aqui').'</p>';
-                }
             ?>            
             <table class="data-table">
                 <thead>
