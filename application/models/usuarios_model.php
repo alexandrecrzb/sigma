@@ -9,7 +9,7 @@ class Usuarios_model extends CI_Model {
                 auditoria('Inclusão de usuario', 'Usuario cadastrado');
                 set_msg('msg_ok', 'Usuário cadastrado com sucesso', 'sucesso');
             } else {
-                set_msg('msg_erro', 'Erro ao cadastrar usuário', 'sucesso');
+                set_msg('msg_erro', 'Erro ao cadastrar usuário', 'erro');
             }
             
             
